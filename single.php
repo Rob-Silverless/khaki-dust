@@ -41,6 +41,12 @@
                         </div><!-- /.col-md-8 col-md-offset-2 -->
                     </div><!-- /.row -->
 
+                    <?php if(get_post_type($post->ID)=='itineraries_archive' || get_post_type($post->ID)=='specials_archive'): ?>
+
+                        <?php get_template_part('part', 'itinerary-accordion'); ?>
+
+                    <?php endif; ?>
+
                     <?php $images = get_field('gallery'); ?>
 
                     <?php if( $images ): ?>
