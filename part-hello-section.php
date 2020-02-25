@@ -8,6 +8,8 @@
     <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(9) ); ?>
 <?php elseif(is_post_type_archive('itineraries_archive')): ?>
     <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(0) ); ?>
+<?php elseif(is_post_type_archive('specials_archive')): ?>
+    <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(0) ); ?>
 <?php else: ?>
     <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 <?php endif; ?>
@@ -36,6 +38,8 @@
                         <?php elseif(is_post_type_archive('camps_archive')): ?>
                             <?php the_field('hello_section_content', 9); ?>
                         <?php elseif(is_post_type_archive('itineraries_archive')): ?>
+                            <?php the_field('hello_section_content', 0); ?>
+                        <?php elseif(is_post_type_archive('specials_archive')): ?>
                             <?php the_field('hello_section_content', 0); ?>
                         <?php else: ?>
                             <?php the_field('hello_section_content'); ?>
