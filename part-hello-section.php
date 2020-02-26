@@ -1,15 +1,15 @@
 <?php if(is_post_type_archive('destinations_archive')): ?>
-    <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(5) ); ?>
+    <?php $featured_image_url = get_field('destinations_archive_image', 'options'); ?>
 <?php elseif(is_post_type_archive('activities_archive')): ?>
-    <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(7) ); ?>
+    <?php $featured_image_url = get_field('activities_archive_image', 'options'); ?>
 <?php elseif(is_search()): ?>
     <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(7) ); ?>
 <?php elseif(is_post_type_archive('camps_archive')): ?>
-    <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(9) ); ?>
+    <?php $featured_image_url = get_field('camps_archive_image', 'options'); ?>
 <?php elseif(is_post_type_archive('itineraries_archive')): ?>
-    <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(0) ); ?>
+    <?php $featured_image_url = get_field('itinerary_archive_image', 'options'); ?>
 <?php elseif(is_post_type_archive('specials_archive')): ?>
-    <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id(0) ); ?>
+    <?php $featured_image_url = get_field('special_archive_image', 'options'); ?>
 <?php else: ?>
     <?php $featured_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 <?php endif; ?>
@@ -32,15 +32,15 @@
                 <?php if(!is_search()): ?>
                     <div class="hello-section__content">
                         <?php if(is_post_type_archive('destinations_archive')): ?>
-                            <?php the_field('hello_section_content', 5); ?>
+                            <?php the_field('destinations_archive_content', 'options'); ?>
                         <?php elseif(is_post_type_archive('activities_archive')): ?>
-                            <?php the_field('hello_section_content', 7); ?>
+                            <?php the_field('activities_archive_content', 'options'); ?>
                         <?php elseif(is_post_type_archive('camps_archive')): ?>
-                            <?php the_field('hello_section_content', 9); ?>
+                            <?php the_field('camps_archive_content', 'options'); ?>
                         <?php elseif(is_post_type_archive('itineraries_archive')): ?>
-                            <?php the_field('hello_section_content', 0); ?>
+                            <?php the_field('itinerary_archive_content', 'options'); ?>
                         <?php elseif(is_post_type_archive('specials_archive')): ?>
-                            <?php the_field('hello_section_content', 0); ?>
+                            <?php the_field('special_archive_content', 'options'); ?>
                         <?php else: ?>
                             <?php the_field('hello_section_content'); ?>
                         <?php endif; ?>
