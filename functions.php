@@ -83,7 +83,7 @@ function mysite_opengraph_content($val) {
 
 /* ~~~~~~~~~~ Display all of posts from custom post type in top navbar ~~~~~~~~~~ */
 
-add_filter( 'wp_get_nav_menu_items', 'cpt_archive_menu_filter', 10, 2 );
+//add_filter( 'wp_get_nav_menu_items', 'cpt_archive_menu_filter', 10, 2 );
 
 function cpt_archive_menu_filter( $items, $args ) {
 
